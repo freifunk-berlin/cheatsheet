@@ -1,0 +1,83 @@
+# connect to the node/router/gateway via secure shell
+# 192.168.42.1 is the default ip after flashing and before configuration 
+# through the assistant
+
+  ssh root@192.168.42.1
+
+# frei.funk resolves to the router ip (ipv4+6)
+
+  ssh root@frei.funk
+
+# if you don't know the router ip search for the router ip in the default router
+# example: default via **10.230.0.49** dev wlp3s0  src 10.230.0.54  metric 303
+
+  ip route show
+
+# learn more about the ip command with
+
+  ip help
+
+# once connected you can check the state of the interfaces with
+
+  ip link show
+
+# check the ip address assigned to the interfaces with
+
+  ip address show
+
+# if you need information about the ipv6 addresses use
+
+  ip -6 address show
+
+# check on the routing policies with
+
+  ip rule show
+
+# to take a look at one of the routing tables use
+
+  ip route show table olsr
+
+# to check the firewall rules use
+
+  iptables -L -t mangle
+
+# check syslog with
+
+  logread
+
+# use the -f option to follow the logs
+
+  logread -f
+
+# check the kernel ring buffer for message
+
+  dmesg
+
+# check if olsrd process is running
+
+  pgrep olsrd
+
+# check if you have neighbours
+
+  neigh.sh
+
+# if you don't have the neigh.sh script because you are using a shitty router
+# use:
+
+  echo -e "GET /links HTTP/1.0\n\n" | nc localhost 2006
+
+# get basic information about a wifi interface
+
+  iw dev wlan0-dhcp-2 info
+
+# get information about the connected stations
+
+  iw dev wlan0-dhcp-2 station dump
+
+# get information about the regulatory domain
+
+  iw reg get
+
+# scan the wifi for other stations etc.
+
+  iw dev wlan0-dhcp-2 scan
