@@ -81,3 +81,7 @@
 # scan the wifi for other stations etc.
 
   iw dev wlan0-dhcp-2 scan
+
+# set the txpower to a fixed value
+
+  iw dev wlan0 set txpower fixed 1500
