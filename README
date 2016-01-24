@@ -85,3 +85,11 @@
 # set the txpower to a fixed value
 
   iw dev wlan0 set txpower fixed 1500
+
+# reset router configuration to default configuration
+
+  firstboot
+
+# or
+
+  mtd -r erase rootfs_data
