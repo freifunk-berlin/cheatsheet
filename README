@@ -93,3 +93,7 @@
 # or
 
   mtd -r erase rootfs_data
+
+# configure a vlan
+
+ip link add link eth0 name eth0.100 type vlan id 100
