@@ -97,3 +97,9 @@
 # configure a vlan
 
 ip link add link eth0 name eth0.100 type vlan id 100
+
+T (tag) - The port belongs to this VLAN, and VLAN tags are included on outgoing
+frames.
+U (untag) - The port belongs to this VLAN, and VLAN tags are excluded from
+outgoing frames.
+E (exclude) - The port does not belong to this VLAN.
